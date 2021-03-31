@@ -9,6 +9,7 @@ module SAXMachine
       parser = Nokogiri::XML::SAX::Parser.new(self)
       parser.parse(xml_input) do |ctx|
         ctx.replace_entities = true
+        ctx.recovery = true
       end
     end
 
